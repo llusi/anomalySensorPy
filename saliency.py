@@ -35,8 +35,9 @@ while True:
 	# grab the frame from the threaded video stream and resize it
 	# to 500px (to speedup processing)
 	frame = vs.read()
+	frame = imutils.resize(frame, width=450)
 	renderframe = frame.copy()
-	# frame = imutils.resize(frame, width=450)
+
 
 	frame1y1 = cv2.getTrackbarPos('y1','capture areas')
 	cv2.setTrackbarMin("y2", "capture areas", frame1y1)
@@ -98,7 +99,9 @@ while True:
 	cv2.imshow("Frame", renderframe)
 	# cv2.imshow("Map", saliencyMap)
 	# cv2.imshow("Treshmap", threshMap)
-	cv2.imshow("Treshmap2", threshMap2)
+
+	# cv2.imshow("Treshmap2", threshMap2)
+
 	# cv2.imshow("blur", blur)
 	key = cv2.waitKey(1) & 0xFF
  
