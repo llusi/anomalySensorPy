@@ -23,10 +23,10 @@ cv2.setTrackbarMin("threshold", "settings", 1)
 cv2.setTrackbarMin("d", "settings", 1)
 
 cv2.namedWindow('capture areas')
-cv2.createTrackbar("y1", "capture areas", 80, 640, null)
-cv2.createTrackbar("y2", "capture areas", 280, 640, null)
-cv2.createTrackbar("x1", "capture areas", 150, 480, null)
-cv2.createTrackbar("x2", "capture areas", 330, 480, null)
+cv2.createTrackbar("y1", "capture areas", 50, 640, null)
+cv2.createTrackbar("y2", "capture areas", 150, 640, null)
+cv2.createTrackbar("x1", "capture areas", 50, 480, null)
+cv2.createTrackbar("x2", "capture areas", 150, 480, null)
 
 count = 0
 total = 0
@@ -35,7 +35,7 @@ while True:
 	# grab the frame from the threaded video stream and resize it
 	# to 500px (to speedup processing)
 	frame = vs.read()
-	frame = imutils.resize(frame, width=450)
+	frame = imutils.resize(frame, width=150)
 	renderframe = frame.copy()
 
 
